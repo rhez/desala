@@ -1,0 +1,78 @@
+/* Add some style to the page */
+* {
+  /* So 100% means 100% */
+  box-sizing: border-box;
+}
+html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+a {
+  align-self: baseline;
+}
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+a:visited {
+  color: #000;
+  text-decoration: none; 
+}
+a:hover {
+  color: #777;
+  text-decoration: none; 
+}
+#container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+#search-form {
+  display: flex;
+  flex-direction: row;
+}
+#search-input {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#search-button {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#search-button:hover {
+  background-color: #3e8e41;
+}
+#search-results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+#search-results div {
+  margin-bottom: 8px;
+}
+#tip {
+  justify-self: flex-end;
+}

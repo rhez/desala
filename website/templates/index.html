@@ -1,0 +1,30 @@
+<!-- index.html -->
+
+<html>
+  <head>
+    <title>Desala.me - Your Daily Dose of Pollack.</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+  </head>
+  <body>
+    <a href="{{ url_for('about')}}"><b>About</b></a>
+    <div id="container2">
+      <div id="container">
+        <h1>Desala.me</h1>
+        <b>Quote of the day:</b><br/>
+        <div id="qotd"></div>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Enter search query">
+          <button type="submit" id="search-button">Search</button>
+        </form>
+        <div class="g-recaptcha" id="captcha" data-sitekey="6LcqeBQkAAAAAOBRuHGGtbXE4UT3RVVFMIWJs1_m"></div>
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='silly_story.js') }}"></script>
+    <script src="{{ url_for('static', filename='search.js') }}"></script>
+    <a id="tip" href='https://ko-fi.com/Z8Z013K5L'>
+      <img height="36" src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' alt='Buy Me a Coffee at ko-fi.com'/>
+    </a>
+  </body>
+</html>
