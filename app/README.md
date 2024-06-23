@@ -8,7 +8,7 @@
         <code>$ cd src</code>
     </p>
     <p>
-        You may have to modify app.spec to suit your OS
+        You may have to modify app.spec to be compatible with your OS
         <br/>
         (Open app.spec in a Text Editor and remove the "app = BUNDLE(...)" for non-Macs)
     </p>
