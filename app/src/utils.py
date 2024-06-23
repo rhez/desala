@@ -46,20 +46,28 @@ class QuotesDataset(Dataset):
 
 def generate_sentence(model, word_to_index, index_to_word, prompt='', max_length=20):
     model.eval()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     with torch.no_grad():
         if not prompt.strip():  # Check if prompt is empty or consists of whitespace
             # Generate a random prompt word from vocabulary
             r_i = random.randint(0, len(index_to_word) - 1)
             prompt = index_to_word[r_i]
+        
         encoded_token = [word_to_index.get(word, word_to_index['<unk>']) for word in prompt.split()]
-        encoded_token = torch.tensor(encoded_token, dtype=torch.long).unsqueeze(0)
+        if encoded_token[0] == word_to_index['<unk>']:
+            # Choose a random word from the vocabulary
+            r_i = random.randint(0, len(index_to_word) - 1)
+            prompt = index_to_word[r_i]
+            encoded_token = [word_to_index[prompt]]
+
+        encoded_token = torch.tensor(encoded_token, dtype=torch.long).unsqueeze(0).to(device)
         hidden = model.init_hidden(1)
         
         for _ in range(max_length - len(encoded_token[0])):
             output, hidden = model(encoded_token, hidden)
             next_token_probs = torch.softmax(output[:, -1, :], dim=-1).squeeze()
             next_token_idx = torch.multinomial(next_token_probs, 1).item()
-            next_token = torch.tensor([[next_token_idx]], dtype=torch.long)
+            next_token = torch.tensor([[next_token_idx]], dtype=torch.long).to(device)
             encoded_token = torch.cat((encoded_token, next_token), dim=1)
             if next_token_idx == word_to_index['<pad>']:
                 break
