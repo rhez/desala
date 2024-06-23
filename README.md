@@ -20,16 +20,16 @@
     </p>
     <p>
         2. Open Console/Terminal and change directory to the src folder
-        <\br>
+        <br/>
         <code>$ cd src</code>
     </p>
     <p>
         You may have to modify app.spec to suit your OS
-        <\br>
+        <br/>
         (Open app.spec in a Text Editor and remove the "app = BUNDLE(...)" for non-Macs)
     </p>
     <p>
         3. Assuming you have pyinstaller, type the following:
-        <\br>
+        <br/>
         <code>$ pyinstaller app.spec</code>
     </p>
