@@ -1,23 +1,26 @@
 import sys
 import random
 import torch
+import os
 from PyQt5.QtWidgets import QLabel, QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTextEdit
 from PyQt5.QtCore import Qt  # Import Qt module for alignment constants
 from utils import load_quotes, generate_sentence, build_vocab, max_words
 from model import LanguageModel
+
+DIR = os.path.dirname(__file__)
 
 class QuoteApp(QWidget):
     def __init__(self):
         super().__init__()
         
         print("Loading quotes")
-        self.quotes = load_quotes('desala.txt')
+        self.quotes = load_quotes(f"{DIR}/desala.txt")
         print("Building vocab")
         self.word_to_index, self.index_to_word = build_vocab(self.quotes)
         
         # Load the checkpoint
         print("Loading checkpoint")
-        model_path = "desala.pth"
+        model_path = f"{DIR}/desala.pth"
         checkpoint = torch.load(model_path, map_location=torch.device('cpu'))
 
         # Initialize your model and load state_dict
