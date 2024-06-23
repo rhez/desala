@@ -5,7 +5,7 @@
     <p>
         You may have to modify app.spec to be compatible with your OS
         <br/>
-        (Open app.spec in a Text Editor and remove the "app = BUNDLE(...)" for non-Macs)
+        (Open app.spec in a Text Editor and remove the <code>app = BUNDLE(...)</code> for non-Macs)
     </p>
     <p>
         2. Open Console/Terminal and change directory to the src folder
