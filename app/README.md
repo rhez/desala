@@ -16,6 +16,6 @@
         <code>$ pip install -U pyinstaller</code>
     </p>
     <p>
-        3.b Assuming you have pyinstaller, type the following:<br/>
+        3b. Assuming you have pyinstaller, type the following:<br/>
         <code>$ pyinstaller app.spec</code>
     </p>
