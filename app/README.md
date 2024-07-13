@@ -8,12 +8,14 @@
         (Open app.spec in a Text Editor and remove the <code>app = BUNDLE(...)</code> for non-Macs)
     </p>
     <p>
-        2. Open Console/Terminal and change directory to the src folder
-        <br/>
+        2. Open Console/Terminal and change directory to the src folder<br/>
         <code>$ cd src</code>
     </p>
     <p>
-        3. Assuming you have pyinstaller, type the following:
-        <br/>
+        3a. Install pyinstaller if you haven't already:<br/>
+        <code>pip install -U pyinstaller</code>
+    </p>
+    <p>
+        3.b Assuming you have pyinstaller, type the following:<br/>
         <code>$ pyinstaller app.spec</code>
     </p>
