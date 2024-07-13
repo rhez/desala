@@ -13,7 +13,7 @@
     </p>
     <p>
         3a. Install pyinstaller if you haven't already:<br/>
-        <code>pip install -U pyinstaller</code>
+        <code>$ pip install -U pyinstaller</code>
     </p>
     <p>
         3.b Assuming you have pyinstaller, type the following:<br/>
